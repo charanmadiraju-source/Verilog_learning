@@ -1,3 +1,23 @@
 vending_complex.vcd
 *.vcd
 __pycache__/
+
+# Vivado automation output directory
+automation/output*/
+automation/vivado_work/
+
+# Vivado project artifacts
+*.xpr
+*.xsa
+*.bit
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.srcs/
+vivado*.log
+vivado*.jou
+webtalk*.log
+webtalk*.jou
+NA/
