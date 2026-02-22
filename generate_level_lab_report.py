@@ -126,7 +126,7 @@ def add_experiment(pdf: LabReportPDF, level_label: str, exp_dir: Path, files: Li
             printable_width = pdf.w - pdf.l_margin - pdf.r_margin
             approx_char_width = pdf.get_string_width("M")
             max_chars = int(printable_width // approx_char_width) if approx_char_width else 120
-            max_chars = max(max_chars, 1)
+            max_chars = min(max(max_chars, 1), 200)
             for segment in [line[i : i + max_chars] for i in range(0, len(line), max_chars)]:
                 pdf.multi_cell(printable_width, 4, segment)
 
