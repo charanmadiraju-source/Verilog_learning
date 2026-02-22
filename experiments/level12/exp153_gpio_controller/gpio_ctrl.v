@@ -7,7 +7,8 @@ module gpio_ctrl (
     input        clk, rst, we, dir_we,
     input  [1:0] addr,
     input  [7:0] wr_data, gpio_in,
-    output reg [7:0] gpio_out, rd_data,
+    output [7:0] gpio_out,
+    output reg [7:0] rd_data,
     output reg        irq
 );
     reg [7:0] out_reg, dir_reg, irq_mask, irq_status, gpio_in_prev;

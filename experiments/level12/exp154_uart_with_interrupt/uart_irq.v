@@ -46,9 +46,7 @@ module uart_irq #(parameter BAUD_DIV=4) (
     always @(posedge clk or posedge rst) begin
         if(rst)begin irq_pending<=0;irq<=0;end
         else begin
-            if(rx_valid) irq_pending[0]<=1;
-            if(!tx_busy_r&&tx_cnt==8) irq_pending[1]<=1; // TX completed
-            irq_pending <= irq_pending & ~irq_clear;
+            irq_pending <= (irq_pending & ~irq_clear) | {(!tx_busy_r && tx_cnt==4'd8), rx_valid};
             irq <= |irq_pending;
         end
     end

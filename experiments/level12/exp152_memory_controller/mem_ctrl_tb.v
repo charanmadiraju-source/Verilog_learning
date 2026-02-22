@@ -16,9 +16,11 @@ module mem_ctrl_tb;
         // Write then read back
         @(posedge clk);#1; req=1;we=1;addr=8'd10;wdata=8'hAB; saw_ack=0;
         repeat(10) begin @(posedge clk);#1; if(ack) saw_ack=1; end
-        req=0; if(!saw_ack)begin $display("FAIL no ack for write");errors=errors+1;end
+        req=0; we=0;
+        if(!saw_ack)begin $display("FAIL no ack for write");errors=errors+1;end
         // Read back
-        @(posedge clk);#1; req=1;we=0;addr=8'd10; saw_ack=0;
+        repeat(5) begin @(posedge clk);#1; end
+        req=1;we=0;addr=8'd10; saw_ack=0;
         repeat(10) begin @(posedge clk);#1; if(ack) begin saw_ack=1; if(rdata!==8'hAB)begin $display("FAIL readback=%0d",rdata);errors=errors+1;end end end
         req=0;
         if(errors==0) $display("PASS: Memory Controller test complete.");
