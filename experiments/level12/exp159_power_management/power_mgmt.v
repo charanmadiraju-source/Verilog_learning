@@ -14,13 +14,12 @@ module power_mgmt(
     always@(posedge clk or posedge rst)begin
         if(rst)begin clk_en_r<=4'b0001;pwr_gate_r<=4'b1110;end // domain0 on by default
         else begin
-            if(we)case(reg_addr)
-                0:clk_en_r<=wr_data[3:0];
-                1:pwr_gate_r<=wr_data[3:0];
-                default:;
-            endcase
-            // Auto-enable on wakeup
-            clk_en_r <= clk_en_r | wakeup_req;
+            if(we && reg_addr==0)
+                clk_en_r <= wr_data[3:0] | wakeup_req;
+            else
+                clk_en_r <= clk_en_r | wakeup_req;
+            if(we && reg_addr==1)
+                pwr_gate_r <= wr_data[3:0];
             case(reg_addr) 0:rd_data<={4'b0,clk_en_r}; 1:rd_data<={4'b0,pwr_gate_r}; default:rd_data<=0; endcase
         end
     end
