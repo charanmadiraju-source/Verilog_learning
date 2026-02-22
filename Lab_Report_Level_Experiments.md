@@ -4,6 +4,8 @@ This document summarizes each Verilog experiment living under the `experiments/l
 
 *Generated on 2026-02-22 from the repository directory structure.*
 
+> To regenerate the full PDF lab book (with RTL + testbench source embedded), run `python generate_level_lab_report.py`. The script walks every `experiments/level*` folder and rewrites `Lab_Report_Level_Experiments.pdf`.
+
 ## Level 1 — Fundamentals (basic gates and simple combinational logic)
 
 | # | Experiment | Key Files | Folder |

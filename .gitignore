@@ -1,2 +1,3 @@
 vending_complex.vcd
 *.vcd
+__pycache__/
