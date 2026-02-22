@@ -4,7 +4,21 @@ This document summarizes each Verilog experiment living under the `experiments/l
 
 *Generated on 2026-02-22 from the repository directory structure.*
 
-> To regenerate the full PDF lab book (with RTL + testbench source embedded), run `python generate_level_lab_report.py`. The script walks every `experiments/level*` folder and rewrites `Lab_Report_Level_Experiments.pdf`.
+> To regenerate the full PDF lab book, run `python generate_level_lab_report.py`.
+> The script walks every `experiments/level*` folder and rewrites `Lab_Report_Level_Experiments.pdf`.
+>
+> The generated PDF is a **comprehensive B.Tech-style lab report** (362 pages, 160 experiments) that includes for each experiment:
+> - **Aim** – derived from source code comments and experiment title
+> - **Apparatus / Requirements** – standard Verilog lab tools (Vivado/ModelSim/iverilog)
+> - **Theory** – category-specific technical description (logic gates, arithmetic, FSMs, memories, etc.)
+> - **Algorithm / Design Methodology** – step-by-step design and verification approach
+> - **Verilog RTL Source Code** – full source of the RTL module(s)
+> - **Testbench / Simulation Code** – full self-checking testbench source
+> - **Expected Simulation Results** – truth tables and timing descriptions
+> - **Schematic / Block Diagram Description** – structural description from code comments
+> - **Result & Conclusion** – standardised conclusion statement
+>
+> **Dependencies:** `pip install fpdf2==2.8.6`
 
 ## Level 1 — Fundamentals (basic gates and simple combinational logic)
 
