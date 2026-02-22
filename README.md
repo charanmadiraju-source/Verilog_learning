@@ -85,7 +85,31 @@ Self-study resource for learning Verilog HDL from the ground up.
 
 ---
 
-## Experiments – Ordered by Difficulty
+## New Structured Curriculum (160 Experiments)
+
+The following curriculum provides a more granular, step-by-step progression from first
+principles to system-on-chip components.  Each level builds on the previous one.
+
+### Level 1 – Fundamentals (Basic Gates & Simple Combinational Logic)
+
+| # | Experiment | Folder | Concepts Practiced |
+|---|------------|--------|--------------------|
+| 01 | [Basic Gates Module](experiments/level1/exp01_basic_gates_module/) | `exp01_basic_gates_module` | `and`, `or`, `not`, `nand`, `nor`, `xor`, `xnor` primitives |
+| 02 | [2-Input AND Gate (Behavioral)](experiments/level1/exp02_and_gate_behavioral/) | `exp02_and_gate_behavioral` | `assign` statement, `&` boolean operator |
+| 03 | [2-Input OR Gate (Behavioral)](experiments/level1/exp03_or_gate_behavioral/) | `exp03_or_gate_behavioral` | Continuous assignment, `|` operator |
+| 04 | [NOT / Inverter Gate](experiments/level1/exp04_not_gate/) | `exp04_not_gate` | Unary `~` operator |
+| 05 | [Universal Gates (NAND/NOR as NOT, AND, OR)](experiments/level1/exp05_universal_gates/) | `exp05_universal_gates` | De Morgan's theorem implementation |
+| 06 | [2-Input XOR Gate](experiments/level1/exp06_xor_gate/) | `exp06_xor_gate` | `^` operator, inequality detection |
+| 07 | [Half Adder](experiments/level1/exp07_half_adder/) | `exp07_half_adder` | XOR for sum, AND for carry, multi-output |
+| 08 | [Full Adder (Gate-Level)](experiments/level1/exp08_full_adder_gate_level/) | `exp08_full_adder_gate_level` | Structural modeling, hierarchical design |
+| 09 | [Full Adder (Dataflow)](experiments/level1/exp09_full_adder_dataflow/) | `exp09_full_adder_dataflow` | Boolean equation implementation |
+| 10 | [Full Adder (Behavioral)](experiments/level1/exp10_full_adder_behavioral/) | `exp10_full_adder_behavioral` | `always @(*)` combinational blocks |
+
+> **Levels 2–12** (experiments 11–160) will be added in subsequent PRs.
+
+---
+
+## Original Experiments – Ordered by Difficulty
 
 ### Level 1 – Beginner (Gate-Level & Basic Combinational Logic)
 
